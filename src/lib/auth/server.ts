@@ -127,6 +127,13 @@ const trustedOrigins: string[] = explicitBaseURL
 
 const databaseUrl = env("DATABASE_URL");
 
+// Direct Google sign-in with YOUR OWN Google OAuth client (Google Cloud Console).
+// When both vars are set, the "Google" button signs in with Google directly
+// instead of going through the Grok broker (which only works on Grok hosting).
+// Redirect URI to register in Google: <BETTER_AUTH_URL>/api/auth/callback/google
+const googleClientId = env("GOOGLE_CLIENT_ID");
+const googleClientSecret = env("GOOGLE_CLIENT_SECRET");
+
 // Static broker OAuth endpoints (skip OIDC discovery on every sign-in / callback).
 // Discovery would cost an extra network hop to the broker before the popup can
 // even redirect to Google/X — the live-preview popup felt stuck on the app for
@@ -184,6 +191,15 @@ export const auth = betterAuth({
   // local loopback variants, or clients get "Invalid origin".
   trustedOrigins,
 
+  // Direct Google sign-in (own OAuth client) — only enabled when both env vars exist.
+  ...(googleClientId && googleClientSecret
+    ? {
+        socialProviders: {
+          google: { clientId: googleClientId, clientSecret: googleClientSecret },
+        },
+      }
+    : {}),
+
   // Encrypt broker-issued OAuth tokens at rest, and treat the broker's upstreams
   // as trusted first-party identities. The broker owns identity and X emails are
   // synthetic/unverified, so WITHOUT this a login can fail with
@@ -196,6 +212,7 @@ export const auth = betterAuth({
       enabled: true,
       trustedProviders: [
         ...GROK_PROVIDERS.map((p) => p.providerId),
+        "google",
         GATE_PROVIDER_ID,
       ],
       // X's synthetic email is never "verified", so don't gate linking on the

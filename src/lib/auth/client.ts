@@ -155,6 +155,20 @@ export async function signIn(
     return;
   }
 
+  // Direct Google sign-in (own Google OAuth client; needs GOOGLE_CLIENT_ID /
+  // GOOGLE_CLIENT_SECRET on the server). The Google button keeps its old
+  // provider id ("grok-google"), so route that one to Better Auth's Google.
+  if (providerId === "grok-google") {
+    const { data, error } = await authClient.signIn.social({
+      provider: "google",
+      callbackURL,
+      errorCallbackURL,
+    });
+    if (error) throw new Error(error.message ?? "Sign-in failed");
+    if (data?.url) window.location.href = data.url;
+    return;
+  }
+
   const { data, error } = await authClient.signIn.oauth2({
     providerId,
     callbackURL,
