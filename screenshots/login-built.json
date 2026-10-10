@@ -1,0 +1,38 @@
+{
+  "url": "http://127.0.0.1:8081/login",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "ลงชื่อ · สมรภูมิ RTS",
+      "hasCanvas": false,
+      "bodyTextLen": 170,
+      "bodyTextHash": "c1e54ea19d307639895803484d3828320fa571459ad1e5e278b9a69c8ccb116d",
+      "bodyTextPrefix": "RTS : REAL-TIME STRATEGY COMMUNITY (TH) ลงชื่อ FACEBOOK DISCORD ",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/login-built.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "ลงชื่อ · สมรภูมิ RTS",
+      "hasCanvas": false,
+      "bodyTextLen": 170,
+      "bodyTextHash": "c1e54ea19d307639895803484d3828320fa571459ad1e5e278b9a69c8ccb116d",
+      "bodyTextPrefix": "RTS : REAL-TIME STRATEGY COMMUNITY (TH) ลงชื่อ FACEBOOK DISCORD ",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/login-built-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/login-built.json",
+  "divergesFromBaseline": false,
+  "baselineReasons": []
+}

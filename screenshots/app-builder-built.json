@@ -1,0 +1,38 @@
+{
+  "url": "http://127.0.0.1:8081/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "สมรภูมิ RTS",
+      "hasCanvas": true,
+      "bodyTextLen": 296,
+      "bodyTextHash": "4a97a8019ca51f6007bb28cf2133569c0639db5efc4023b2396b9ee0a5948bb3",
+      "bodyTextPrefix": "RTS : REAL-TIME STRATEGY COMMUNITY (TH) GUIDE แสกนแล้ว รวย TH / ",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "สมรภูมิ RTS",
+      "hasCanvas": true,
+      "bodyTextLen": 296,
+      "bodyTextHash": "3c337e4924ae7c26fcf8bf1461d4c78c11b6599d4ad0595076f9779f08b3ca57",
+      "bodyTextPrefix": "RTS : REAL-TIME STRATEGY COMMUNITY (TH) GUIDE แสกนแล้ว รวย TH / ",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-built.json",
+  "divergesFromBaseline": false,
+  "baselineReasons": []
+}

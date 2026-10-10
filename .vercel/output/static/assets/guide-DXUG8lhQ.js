@@ -1,0 +1,1 @@
+import{i as e,t}from"./react-DB-4Zxce.js";var n=e(t());function r(){return(0,n.useEffect)(()=>{window.location.replace(`/guide/index.html`)},[]),null}export{r as component};
